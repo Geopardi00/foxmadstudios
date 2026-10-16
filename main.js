@@ -56,6 +56,7 @@ if (!reduceMotion && matchMedia('(pointer: fine)').matches) {
 /* ---------- Hero: drifting copper embers ---------- */
 const canvas = document.querySelector('.hero__embers');
 const ctx = canvas.getContext('2d');
+const pixelEmbers = canvas.dataset.embers === 'pixel';
 let W, H, dpr, embers = [], running = !reduceMotion, rafId;
 
 function resize() {
@@ -83,6 +84,13 @@ function tick() {
     p.y -= p.vy; p.sway += 0.01; p.x += Math.sin(p.sway) * 0.25;
     if (p.y < -10) embers[i] = spawn(false);
     const fadeTop = Math.min(1, p.y / (H * 0.35));
+    if (pixelEmbers) {
+      // Square sparks snapped to a 2px grid (pixel-art style)
+      const s = p.r > 1.3 ? 4 : 2;
+      ctx.fillStyle = `rgba(255, 126, 20, ${p.a * fadeTop})`;
+      ctx.fillRect(Math.round(p.x / 2) * 2, Math.round(p.y / 2) * 2, s, s);
+      continue;
+    }
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
     ctx.fillStyle = `rgba(233, 150, 106, ${p.a * fadeTop})`;

@@ -5,7 +5,9 @@ Single-page studio site: plain HTML, CSS and JavaScript, no build step.
 - `index.html`: page content
 - `styles.css`: design tokens (from the FoxMad style sheet), layout and animations
 - `main.js`: scroll reveals, nav behaviour, hero embers and pointer glow
-- `assets/`: logo and icons
+- `assets/`: logo and icons (`assets/pixel/`: the pixel-art logo, its crops and icons)
+- `variants/`: art-style iterations of the same page, sharing `styles.css` and `main.js`
+  - `variants/pixel-art/`: pixel-art logo and look (open `/variants/pixel-art/`)
 
 ## Preview locally
 
