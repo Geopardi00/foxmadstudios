@@ -38,6 +38,30 @@ if (reduceMotion) {
   clips.forEach((v) => vio.observe(v));
 }
 
+/* ---------- Scroll parallax: space backdrop and the ghost wordmark ---------- */
+const gpSection = document.querySelector('.gp');
+const ghost = document.querySelector('.about__ghost span');
+const aboutSection = document.querySelector('.about');
+if (!reduceMotion) {
+  let ticking = false;
+  const parallax = () => {
+    const vh = innerHeight;
+    const g = gpSection.getBoundingClientRect();
+    if (g.bottom > 0 && g.top < vh) {
+      const p = (vh - g.top) / (vh + g.height); // 0..1 while the section crosses the screen
+      gpSection.style.setProperty('--gp-shift', `${(p - 0.5) * -60}px`);
+    }
+    const a = aboutSection.getBoundingClientRect();
+    if (a.bottom > 0 && a.top < vh) {
+      const p = (vh - a.top) / (vh + a.height);
+      ghost.style.setProperty('--ghost-x', `${-4 - p * 22}%`);
+    }
+    ticking = false;
+  };
+  addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(parallax); } }, { passive: true });
+  parallax();
+}
+
 /* ---------- Hero: pointer glow + fox parallax ---------- */
 const hero = document.querySelector('.hero');
 const fox = document.querySelector('.hero__fox');

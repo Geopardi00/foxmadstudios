@@ -19,6 +19,7 @@
 </head>
 <body>
   <div class="progress" aria-hidden="true"></div>
+  <div class="gridlines" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
 
   <header class="nav" id="nav">
     <a href="#top" class="nav__brand" aria-label="FoxMad Studios, back to top">
@@ -67,80 +68,128 @@
     </div>
 
     <!-- GRAVITY POST -->
-    <section class="section feature" id="gravity-post">
-      <header class="section__head reveal">
-        <p class="eyebrow">Coming next</p>
-        <h2>Postage paid. <span class="copper">Physics pending.</span></h2>
-      </header>
+    <section class="gp" id="gravity-post">
+      <div class="gp__bg" aria-hidden="true">
+        <picture>
+          <source media="(max-width: 700px)" srcset="assets/gravity-post/space-narrow.webp">
+          <img src="assets/gravity-post/space-wide.webp" alt="" width="2880" height="930">
+        </picture>
+      </div>
+      <svg class="gp__orbits" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <ellipse cx="600" cy="400" rx="560" ry="250"/>
+        <ellipse cx="600" cy="400" rx="420" ry="180"/>
+        <path id="gp-orbit" d="M40 400 A560 250 0 1 1 1160 400 A560 250 0 1 1 40 400"/>
+        <g class="gp__parcel"><rect x="-9" y="-6" width="18" height="12" rx="2"/><path d="M-9 -5.5 L0 1 L9 -5.5"/>
+          <animateMotion dur="26s" repeatCount="indefinite" rotate="auto"><mpath href="#gp-orbit"/></animateMotion></g>
+      </svg>
 
-      <div class="feature__grid">
-        <div class="feature__media reveal">
-          <video class="feature__clip" src="assets/gravity-post/slingshot-clip.mp4" poster="assets/gravity-post/slingshot.webp" autoplay muted loop playsinline preload="metadata" aria-label="Gameplay: a parcel capsule slingshots around a planet"></video>
+      <div class="gp__inner">
+        <header class="index reveal">
+          <span class="index__n">01</span><span class="index__line"></span><span class="index__t">Coming next</span>
+        </header>
+
+        <div class="gp__hero">
+          <h2 class="gp__logo reveal"><img src="assets/gravity-post/logo.webp" alt="Gravity Post" width="1000" height="330"></h2>
+          <p class="gp__slogan reveal" style="--d:120ms">Postage paid. <span class="copper">Physics pending.</span></p>
+          <p class="gp__date reveal" style="--d:200ms"><span class="tag">Steam</span> 16.03.2027</p>
         </div>
-        <div class="feature__body reveal" style="--d:120ms">
-          <span class="tag">Coming to Steam · 16 March 2027</span>
-          <h3 class="feature__logo"><img src="assets/gravity-post/logo.webp" alt="Gravity Post" width="1000" height="330"></h3>
-          <p class="lead">A relaxing physics puzzle game. Bend gravity to invent postal routes between tiny planets, then watch parcels fly across the postal network you've built.</p>
-          <p class="feature__story">The jump lanes between the worlds went dark generations ago. Place attractors, repulsors and gates, slingshot cargo capsules past worlds and black holes, and grow your trade network until it reaches across the dark again.</p>
-          <ul class="feature__facts">
-            <li><strong>~100</strong> hand-built routing puzzles</li>
-            <li><strong>6</strong> regions, 40 stations</li>
-            <li><strong>8</strong> languages</li>
-          </ul>
-          <div class="feature__btns">
-            <!-- Steam store page is waiting for Valve's review. When it is public, swap this span for:
-                 <a class="btn" href="https://store.steampowered.com/app/5598990/">Wishlist on Steam</a> -->
-            <span class="btn btn--soon" aria-disabled="true">Steam page coming soon</span>
-            <!-- itch.io demo goes public after the Steam page. Then swap for:
-                 <a class="btn btn--ghost" href="https://foxmadstudios.itch.io/gravity-post">Play the demo on itch.io</a> -->
-            <span class="btn btn--ghost btn--soon" aria-disabled="true">Free demo coming soon</span>
+
+        <div class="gp__grid">
+          <div class="gp__media reveal">
+            <video class="gp__clip" src="assets/gravity-post/slingshot-clip.mp4" poster="assets/gravity-post/slingshot.webp" autoplay muted loop playsinline preload="metadata" aria-label="Gameplay: a parcel capsule slingshots around a planet"></video>
+            <span class="gp__corner gp__corner--tl"></span><span class="gp__corner gp__corner--br"></span>
           </div>
-          <!-- Press kit goes public with the Steam page. Then swap for:
-               <p class="feature__press">Writing about the game? <a href="https://foxmadstudios.itch.io/gravity-post-press-kit">Open the press kit</a></p> -->
-          <p class="feature__press">Press kit coming soon. Writing about the game? <a href="mailto:foxmadstudios@proton.me">Email me</a> for early access.</p>
+          <div class="gp__body reveal" style="--d:120ms">
+            <p class="lead">A relaxing physics puzzle game. Bend gravity to invent postal routes between tiny planets, then watch parcels fly across the postal network you've built.</p>
+            <p class="gp__story">The jump lanes between the worlds went dark generations ago. Place attractors, repulsors and gates, slingshot cargo capsules past worlds and black holes, and grow your trade network until it reaches across the dark again.</p>
+            <dl class="gp__facts">
+              <div><dt>Puzzles</dt><dd data-count="100">~100</dd></div>
+              <div><dt>Regions</dt><dd data-count="6">6</dd></div>
+              <div><dt>Stations</dt><dd data-count="40">40</dd></div>
+              <div><dt>Languages</dt><dd data-count="8">8</dd></div>
+            </dl>
+            <div class="gp__btns">
+              <!-- Steam store page is waiting for Valve's review. When it is public, swap this span for:
+                   <a class="btn" href="https://store.steampowered.com/app/5598990/">Wishlist on Steam</a> -->
+              <span class="btn btn--soon" aria-disabled="true">Steam page coming soon</span>
+              <!-- itch.io demo goes public after the Steam page. Then swap for:
+                   <a class="btn btn--ghost" href="https://foxmadstudios.itch.io/gravity-post">Play the demo on itch.io</a> -->
+              <span class="btn btn--ghost btn--soon" aria-disabled="true">Free demo coming soon</span>
+            </div>
+            <!-- Press kit goes public with the Steam page. Then swap for:
+                 <p class="gp__press">Writing about the game? <a href="https://foxmadstudios.itch.io/gravity-post-press-kit">Open the press kit</a></p> -->
+            <p class="gp__press">Press kit coming soon. Writing about the game? <a href="mailto:foxmadstudios@proton.me">Email me</a> for early access.</p>
+          </div>
         </div>
       </div>
 
-      <ul class="shots">
-        <li class="reveal" style="--d:0ms"><img src="assets/gravity-post/network_map.webp" alt="The postal network map with routes between planets" loading="lazy" width="1280" height="720"></li>
-        <li class="reveal" style="--d:100ms"><img src="assets/gravity-post/delivered_frost_arc.webp" alt="A parcel delivered along a frosty slingshot arc" loading="lazy" width="1280" height="720"></li>
-        <li class="reveal" style="--d:200ms"><video src="assets/gravity-post/network-clip.mp4" poster="assets/gravity-post/network_map.webp" autoplay muted loop playsinline preload="metadata" aria-label="Parcels travelling across the postal network"></video></li>
-        <li class="reveal" style="--d:300ms"><img src="assets/gravity-post/network_3d.webp" alt="The 3D network map tilted like a model" loading="lazy" width="1280" height="720"></li>
-      </ul>
+      <!-- Filmstrip: the list is doubled so the loop is seamless; the copy is hidden from screen readers -->
+      <div class="strip" aria-label="Screenshots">
+        <ul class="strip__track">
+          <li><img src="assets/gravity-post/network_map.webp" alt="The postal network map with routes between planets" loading="lazy" width="1280" height="720"></li>
+          <li><img src="assets/gravity-post/delivered_frost_arc.webp" alt="A parcel delivered along a frosty slingshot arc" loading="lazy" width="1280" height="720"></li>
+          <li><video src="assets/gravity-post/network-clip.mp4" poster="assets/gravity-post/network_map.webp" autoplay muted loop playsinline preload="metadata" aria-label="Parcels travelling across the postal network"></video></li>
+          <li><img src="assets/gravity-post/asteroid_rings.webp" alt="Routing a capsule through asteroid rings" loading="lazy" width="960" height="540"></li>
+          <li><img src="assets/gravity-post/contract_won.webp" alt="A contract won screen" loading="lazy" width="960" height="540"></li>
+          <li><img src="assets/gravity-post/network_3d.webp" alt="The 3D network map tilted like a model" loading="lazy" width="1280" height="720"></li>
+          <li><img src="assets/gravity-post/company.webp" alt="The Gravity Post Company overview" loading="lazy" width="960" height="540"></li>
+        </ul>
+        <ul class="strip__track" aria-hidden="true">
+          <li><img src="assets/gravity-post/network_map.webp" alt="" loading="lazy" width="1280" height="720"></li>
+          <li><img src="assets/gravity-post/delivered_frost_arc.webp" alt="" loading="lazy" width="1280" height="720"></li>
+          <li><img src="assets/gravity-post/slingshot.webp" alt="" loading="lazy" width="1280" height="720"></li>
+          <li><img src="assets/gravity-post/asteroid_rings.webp" alt="" loading="lazy" width="960" height="540"></li>
+          <li><img src="assets/gravity-post/contract_won.webp" alt="" loading="lazy" width="960" height="540"></li>
+          <li><img src="assets/gravity-post/network_3d.webp" alt="" loading="lazy" width="1280" height="720"></li>
+          <li><img src="assets/gravity-post/company.webp" alt="" loading="lazy" width="960" height="540"></li>
+        </ul>
+      </div>
     </section>
 
     <!-- ABOUT -->
-    <section class="section about" id="about">
-      <div class="about__statement reveal">
-        <p class="eyebrow">About the studio</p>
-        <h2>I follow instinct, then sweat <span class="copper">every detail.</span></h2>
-        <p class="lead">FoxMad Studios is Matti, a solo developer in Finland. I make relaxed games with a clever twist: no stress and no rush, but real ideas to chew on. Half sharp fox, half mad idea: I chase strange concepts, then polish them until they feel effortless. My first game, Gravity Post, is built in Godot. More strange ideas are already brewing.</p>
+    <section class="about" id="about">
+      <div class="about__ghost" aria-hidden="true"><span>FoxMad</span></div>
+      <div class="about__inner">
+        <header class="index reveal">
+          <span class="index__n">02</span><span class="index__line"></span><span class="index__t">About the studio</span>
+        </header>
+        <div class="about__grid">
+          <div class="about__statement reveal">
+            <h2>I follow instinct, then sweat <span class="copper">every detail.</span></h2>
+            <p class="lead">FoxMad Studios is Matti, a solo developer in Finland. I make relaxed games with a clever twist: no stress and no rush, but real ideas to chew on. Half sharp fox, half mad idea: I chase strange concepts, then polish them until they feel effortless. My first game, Gravity Post, is built in Godot. More strange ideas are already brewing.</p>
+          </div>
+          <div class="about__fox reveal" style="--d:150ms" aria-hidden="true"><span class="logo logo--fox"></span></div>
+        </div>
+        <ul class="values">
+          <li class="reveal" style="--d:0ms"><span class="values__n">01</span><h3>Creative</h3><p>Fresh mechanics over familiar formulas.</p></li>
+          <li class="reveal" style="--d:100ms"><span class="values__n">02</span><h3>Playful</h3><p>Experiments are encouraged. Failing is half the fun.</p></li>
+          <li class="reveal" style="--d:200ms"><span class="values__n">03</span><h3>Laid-back</h3><p>Play at your own pace. Games should leave you in a better mood.</p></li>
+          <li class="reveal" style="--d:300ms"><span class="values__n">04</span><h3>Meticulous</h3><p>The small things are the whole thing.</p></li>
+        </ul>
       </div>
-      <ul class="values">
-        <li class="reveal" style="--d:0ms"><span class="values__n">01</span><h3>Creative</h3><p>Fresh mechanics over familiar formulas.</p></li>
-        <li class="reveal" style="--d:100ms"><span class="values__n">02</span><h3>Playful</h3><p>Experiments are encouraged. Failing is half the fun.</p></li>
-        <li class="reveal" style="--d:200ms"><span class="values__n">03</span><h3>Laid-back</h3><p>Play at your own pace. Games should leave you in a better mood.</p></li>
-        <li class="reveal" style="--d:300ms"><span class="values__n">04</span><h3>Meticulous</h3><p>The small things are the whole thing.</p></li>
-      </ul>
     </section>
 
     <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="contact__inner reveal">
-        <div class="divider divider--static" aria-hidden="true"><span></span><i></i><span></span></div>
-        <h2>Let's make something <span class="copper">with soul.</span></h2>
-        <p class="lead">Press, publishers, fellow developers or players, I'd love to hear from you.</p>
-        <a class="btn" href="mailto:foxmadstudios@proton.me">Get in touch</a>
-        <p class="contact__email">foxmadstudios@proton.me</p>
-        <p class="eyebrow socials__label">Follow Gravity Post</p>
-        <ul class="socials">
-          <li><a href="https://x.com/GravityPostGame" rel="noopener">X</a></li>
-          <li><a href="https://www.youtube.com/@GravityPostGame" rel="noopener">YouTube</a></li>
-          <li><a href="https://www.reddit.com/user/GravityPostGame/" rel="noopener">Reddit</a></li>
-          <li><a href="https://www.tiktok.com/@gravitypostgame" rel="noopener">TikTok</a></li>
-          <li><a href="https://space.bilibili.com/3747584128584624" rel="noopener" lang="zh-CN">Bilibili</a></li>
-        </ul>
+    <section class="contact" id="contact">
+      <div class="contact__inner">
+        <header class="index index--light reveal">
+          <span class="index__n">03</span><span class="index__line"></span><span class="index__t">Say hello</span>
+        </header>
+        <h2 class="contact__title reveal">Let's make something <em>with soul.</em></h2>
+        <p class="contact__lead reveal" style="--d:100ms">Press, publishers, fellow developers or players, I'd love to hear from you.</p>
+        <a class="contact__mail reveal" style="--d:180ms" href="mailto:foxmadstudios@proton.me"><span>foxmadstudios@proton.me</span><i aria-hidden="true">→</i></a>
+        <div class="contact__follow reveal" style="--d:260ms">
+          <p class="contact__label">Follow Gravity Post</p>
+          <ul class="socials">
+            <li><a href="https://x.com/GravityPostGame" rel="noopener">X</a></li>
+            <li><a href="https://www.youtube.com/@GravityPostGame" rel="noopener">YouTube</a></li>
+            <li><a href="https://www.reddit.com/user/GravityPostGame/" rel="noopener">Reddit</a></li>
+            <li><a href="https://www.tiktok.com/@gravitypostgame" rel="noopener">TikTok</a></li>
+            <li><a href="https://space.bilibili.com/3747584128584624" rel="noopener" lang="zh-CN">Bilibili</a></li>
+          </ul>
+        </div>
       </div>
+      <span class="contact__fox logo logo--fox" aria-hidden="true"></span>
     </section>
   </main>
 
