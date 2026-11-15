@@ -72,36 +72,21 @@
       <div class="gp__bg" aria-hidden="true">
         <picture>
           <source media="(max-width: 700px)" srcset="assets/gravity-post/space-narrow.webp">
-          <img src="assets/gravity-post/space-wide.webp" alt="" width="2880" height="930">
+          <img src="assets/gravity-post/space-wide.webp" alt="" width="1920" height="1080">
         </picture>
       </div>
-      <svg class="gp__orbits" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-        <ellipse cx="600" cy="400" rx="560" ry="250"/>
-        <ellipse cx="600" cy="400" rx="420" ry="180"/>
-        <path id="gp-orbit" d="M40 400 A560 250 0 1 1 1160 400 A560 250 0 1 1 40 400"/>
-        <g class="gp__parcel"><rect x="-9" y="-6" width="18" height="12" rx="2"/><path d="M-9 -5.5 L0 1 L9 -5.5"/>
-          <animateMotion dur="26s" repeatCount="indefinite" rotate="auto"><mpath href="#gp-orbit"/></animateMotion></g>
-      </svg>
 
       <div class="gp__inner">
         <header class="index reveal">
           <span class="index__n">01</span><span class="index__line"></span><span class="index__t">Coming next</span>
         </header>
 
-        <div class="gp__hero">
-          <h2 class="gp__logo reveal"><img src="assets/gravity-post/logo.webp" alt="Gravity Post" width="1000" height="330"></h2>
-          <p class="gp__slogan reveal" style="--d:120ms">Postage paid. <span class="copper">Physics pending.</span></p>
-          <p class="gp__date reveal" style="--d:200ms"><span class="tag">Steam</span> 16.03.2027</p>
-        </div>
-
         <div class="gp__grid">
-          <div class="gp__media reveal">
-            <video class="gp__clip" src="assets/gravity-post/slingshot-clip.mp4" poster="assets/gravity-post/slingshot.webp" autoplay muted loop playsinline preload="metadata" aria-label="Gameplay: a parcel capsule slingshots around a planet"></video>
-            <span class="gp__corner gp__corner--tl"></span><span class="gp__corner gp__corner--br"></span>
-          </div>
-          <div class="gp__body reveal" style="--d:120ms">
+          <div class="gp__body reveal">
+            <h2 class="gp__logo"><img src="assets/gravity-post/logo.webp" alt="Gravity Post" width="1000" height="330"></h2>
+            <p class="gp__slogan">Postage paid. <span class="copper">Physics pending.</span></p>
+            <p class="gp__date"><span class="tag">Steam</span> 16.03.2027</p>
             <p class="lead">A relaxing physics puzzle game. Bend gravity to invent postal routes between tiny planets, then watch parcels fly across the postal network you've built.</p>
-            <p class="gp__story">The jump lanes between the worlds went dark generations ago. Place attractors, repulsors and gates, slingshot cargo capsules past worlds and black holes, and grow your trade network until it reaches across the dark again.</p>
             <dl class="gp__facts">
               <div><dt>Puzzles</dt><dd data-count="100">~100</dd></div>
               <div><dt>Regions</dt><dd data-count="6">6</dd></div>
@@ -119,6 +104,10 @@
             <!-- Press kit goes public with the Steam page. Then swap for:
                  <p class="gp__press">Writing about the game? <a href="https://foxmadstudios.itch.io/gravity-post-press-kit">Open the press kit</a></p> -->
             <p class="gp__press">Press kit coming soon. Writing about the game? <a href="mailto:foxmadstudios@proton.me">Email me</a> for early access.</p>
+          </div>
+          <div class="gp__media reveal" style="--d:120ms">
+            <video class="gp__clip" src="assets/gravity-post/slingshot-clip.mp4" poster="assets/gravity-post/slingshot.webp" autoplay muted loop playsinline preload="metadata" aria-label="Gameplay: a parcel capsule slingshots around a planet"></video>
+            <span class="gp__corner gp__corner--tl"></span><span class="gp__corner gp__corner--br"></span>
           </div>
         </div>
       </div>
