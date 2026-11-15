@@ -27,15 +27,15 @@ const io = new IntersectionObserver((entries) => {
 }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
 document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
-/* ---------- Card SVG animations: pause when off-screen or reduced motion ---------- */
-const vizzes = document.querySelectorAll('.viz');
+/* ---------- Gameplay clips: no autoplay with reduced motion, pause off-screen ---------- */
+const clips = document.querySelectorAll('video');
 if (reduceMotion) {
-  vizzes.forEach((svg) => svg.pauseAnimations?.());
+  clips.forEach((v) => { v.removeAttribute('autoplay'); v.pause(); v.controls = true; });
 } else {
   const vio = new IntersectionObserver((entries) => {
-    for (const e of entries) e.isIntersecting ? e.target.unpauseAnimations?.() : e.target.pauseAnimations?.();
+    for (const e of entries) e.isIntersecting ? e.target.play().catch(() => {}) : e.target.pause();
   });
-  vizzes.forEach((svg) => vio.observe(svg));
+  clips.forEach((v) => vio.observe(v));
 }
 
 /* ---------- Hero: pointer glow + fox parallax ---------- */
