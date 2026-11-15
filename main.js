@@ -62,6 +62,18 @@ if (!reduceMotion) {
   parallax();
 }
 
+/* ---------- Contact: light follows the pointer, drifts by itself on touch ---------- */
+const contact = document.querySelector('.contact');
+if (matchMedia('(pointer: fine)').matches && !reduceMotion) {
+  contact.addEventListener('pointermove', (e) => {
+    const r = contact.getBoundingClientRect();
+    contact.style.setProperty('--cx', `${((e.clientX - r.left) / r.width) * 100}%`);
+    contact.style.setProperty('--cy', `${((e.clientY - r.top) / r.height) * 100}%`);
+  });
+} else if (!reduceMotion) {
+  contact.classList.add('is-idle');
+}
+
 /* ---------- Hero: pointer glow + fox parallax ---------- */
 const hero = document.querySelector('.hero');
 const fox = document.querySelector('.hero__fox');
