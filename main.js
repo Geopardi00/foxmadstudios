@@ -49,7 +49,7 @@ if (!reduceMotion) {
     const g = gpSection.getBoundingClientRect();
     if (g.bottom > 0 && g.top < vh) {
       const p = (vh - g.top) / (vh + g.height); // 0..1 while the section crosses the screen
-      gpSection.style.setProperty('--gp-shift', `${(p - 0.5) * -60}px`);
+      gpSection.style.setProperty('--gp-shift', `${(p - 0.5) * -50}px`);
     }
     const a = aboutSection.getBoundingClientRect();
     if (a.bottom > 0 && a.top < vh) {
