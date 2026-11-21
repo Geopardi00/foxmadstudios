@@ -15,15 +15,11 @@ npx http-server@14.1.1 -p 5173 -c-1
 
 Then open http://localhost:5173.
 
-## Gravity Post links that are waiting
+## Gravity Post links
 
-The site currently shows only Gravity Post. Three links are shown as "coming soon" until they go public:
-
-- Steam store page (waiting for Valve's review): https://store.steampowered.com/app/5598990/
+- Steam: https://store.steampowered.com/app/5598990/
 - itch.io demo: https://foxmadstudios.itch.io/gravity-post
 - Press kit: https://foxmadstudios.itch.io/gravity-post-press-kit
-
-Each one has the ready-made link in an HTML comment next to it in `index.html`; swap the "coming soon" span for that link when the page is public.
 
 ## Still to do
 
